@@ -1,1 +1,1 @@
-# holbertonschool-softy-pinko-docker
+# task2 dir
