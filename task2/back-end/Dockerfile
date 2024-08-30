@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-ENV DEBIAN_FRONTENFD=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y

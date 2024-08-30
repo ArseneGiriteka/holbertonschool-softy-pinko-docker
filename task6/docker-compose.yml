@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  front-end:
+    build: ./front-end
+    ports:
+      - 9000:9000
+    volumes:
+      - .:/app/front-end
+  
+  back-end:
+    build: ./back-end
+    volumes:
+      - .:/app/back-end
+    deploy:
+      replicas: 2
+
+  proxy:
+    build: ./proxy
+    ports:
+      - 80:80
+    volumes:
+      - .:/app/proxy
+    depends_on:
+      - back-end
+      - front-end

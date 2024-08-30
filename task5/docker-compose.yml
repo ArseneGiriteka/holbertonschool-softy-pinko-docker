@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./front-end
+    ports:
+      - 9000:9000
+    volumes:
+      - .:/app/front-end
+  
+  backend:
+    build: ./back-end
+    ports:
+      - 5252:5252
+    volumes:
+      - .:/app/back-end
+
+  proxy:
+    build: ./proxy
+    ports:
+      - 80:80
+    volumes:
+      - .:/app/proxy

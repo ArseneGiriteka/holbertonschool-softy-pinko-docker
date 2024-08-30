@@ -1,16 +1,14 @@
 version: "3.8"
 
 services:
-  frontend:
+  front-end:
     build: ./front-end
+    image: dino:zoro
     ports:
-      - 5252:5252
-    volumes:
-      - .:/app
+      - "9000:9000"
   
-  backend:
+  back-end:
     build: ./back-end
+    image: dino:zoro
     ports:
-      - 5253:5253
-    volumes:
-      - .:/app
+      - "5252:5252"
